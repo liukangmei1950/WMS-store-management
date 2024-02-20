@@ -1,0 +1,42 @@
+spring:
+  #上传文件大小
+  # 连接数据库的信息
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/java_stu?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true
+    username: root
+    password: 123456
+    #数据库连接池       德鲁伊
+    type: com.alibaba.druid.pool.DruidDataSource
+  #  redis:
+  #    host: localhost
+  #    port: 6379
+  servlet:
+    #文件大小
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  main:
+    banner-mode: off
+
+## mybatis配置
+#mybatis:
+#  # 扫描映射文件
+#  mapper-locations: classpath:mapper/*.xml
+#  # 配置别名扫描的包
+#  type-aliases-package: com.qf.entity
+#  configuration:
+#    # 开启驼峰映射配置
+#    map-underscore-to-camel-case: true
+
+#开启mp的日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+
+
+server:
+  port: 8088
+
